@@ -1,0 +1,92 @@
+[
+    {
+      "question": "At what age did Queen Elizabeth II die?",
+      "answerOptions": [
+        { "answer": "96", "isCorrect": true },
+        { "answer": "98" },
+        { "answer": "102" },
+        { "answer": "104" }
+      ]
+    },
+    {
+      "question": "What temperature, in Fahrenheit, did the heat wave peak at in Cupertino?",
+      "answerOptions": [
+        { "answer": "100 degrees" },
+        { "answer": "109 degrees", "isCorrect": true },
+        { "answer": "114 degrees" },
+        { "answer": "120 degrees" }
+      ]
+    },
+    {
+      "question": "Which hurricane hit Florida on Sept. 28?",
+      "answerOptions": [
+        { "answer": "Ana" },
+        { "answer": "Fiona" },
+        { "answer": "Ian", "isCorrect": true },
+        { "answer": "Odette" }
+      ]
+    },
+    {
+      "question": "Where were students without a means of transportation evacuated to after the bomb threat on Sept. 21?",
+      "answerOptions": [
+        { "answer": "Student Union" },
+        { "answer": "Rally Court" },
+        { "answer": "Gym" },
+        { "answer": "Softball Field", "isCorrect": true }
+      ]
+    },
+    {
+        "question": "Who placed second in the Welcome Back Rally on Sept. 2?",
+        "answerOptions": [
+          { "answer": "Freshmen" },
+          { "answer": "Sophomores", "isCorrect": true },
+          { "answer": "Juniors" },
+          { "answer": "Seniors" }
+        ]
+    },
+    {
+        "question": "What type of astronomical object did NASA’s DART system crash into on Sept. 26?",
+        "answerOptions": [
+          { "answer": "Comet" },
+          { "answer": "Dwarf Planet" },
+          { "answer": "Asteroid", "isCorrect": true },
+          { "answer": "Meteor" }
+        ]
+    },
+    {
+        "question": "Which dance team performed at Bobateeno on Sept. 17?",
+        "answerOptions": [
+          { "answer": "Andaaz" },
+          { "answer": "KCDC", "isCorrect": true },
+          { "answer": "MVDT" },
+          { "answer": "Raas" }
+        ]
+    },
+    {
+        "question": "A far right party won a general election in what European country?",
+        "answerOptions": [
+          { "answer": "Spain" },
+          { "answer": "France" },
+          { "answer": "Germany" },
+          { "answer": "Italy", "isCorrect": true }
+        ]
+    },
+    {
+        "question": "What holiday did Spanish students celebrate on Sept. 19?",
+        "answerOptions": [
+          { "answer": "Cinco De Mayo" },
+          { "answer": "Mexican Independence Day", "isCorrect": true },
+          { "answer": "National Day of Spain" },
+          { "answer": "Día de Muertos" }
+        ]
+    },
+    {
+        "question": "Protests erupted in which Islamic Republic following the death of 22-year-old Mahsa Amini?",
+        "answerOptions": [
+          { "answer": "Afghanistan" },
+          { "answer": "Mauritania", "isCorrect": true },
+          { "answer": "Iran" },
+          { "answer": "Pakistan" }
+        ]
+    }
+  ]
