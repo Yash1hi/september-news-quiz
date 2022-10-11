@@ -11,7 +11,7 @@ const Home: NextPage = () => {
   const [showScore, setShowScore] = useState(false);
 
 
-  const handleAnswerOption = (answer) => {
+  const handleAnswerOption = (answer: any) => {
     setSelectedOptions([
       (selectedOptions[currentQuestion] = { answerByUser: answer }),
     ]);
