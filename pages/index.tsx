@@ -44,7 +44,7 @@ export default function Home() {
   return (
     <div className="flex flex-col w-screen bg-[#e32b22]">
       <Head>
-        <title>Quiz App</title>
+        <title>El Estoque September News Quiz</title>
       </Head>
         {showScore ? (
         <div className="flex flex-row w-screen px-5 h-screen justify-center items-center">
@@ -60,7 +60,7 @@ export default function Home() {
         ) : (
           <>
           <div className="flex flex-col lg:flex-row w-screen">
-            <div className="w-screen lg:w-1/2 px-5 h-screen justify-center items-center">
+            <div className="w-screen lg:w-1/2 px-5 h-1/2 justify-center items-center">
             <div className="flex flex-col items-start w-full">
               <h4 className="mt-10 text-xl text-white/60">
                 Question {currentQuestion + 1} of {questions.length}
@@ -111,7 +111,7 @@ export default function Home() {
             </div>
             </div>
             <div className="flex flex-col w-screen lg:w-1/2 px-5 h-screen justify-start lg:justify-end items-center">
-              <img src={questions[currentQuestion].image} className="lg:h-4/5"></img>
+              <img src={questions[currentQuestion].image} className="h-1/2 lg:h-4/5"></img>
             </div>
           </div>
           </>
