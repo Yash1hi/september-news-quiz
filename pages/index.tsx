@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 export default function Home() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [selectedOptions, setSelectedOptions] = useState([]);
+  const [selectedOptions, setSelectedOptions] = useState([] as any);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
 
