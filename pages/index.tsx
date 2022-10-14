@@ -8,7 +8,7 @@ export default function Home() {
   const [selectedOptions, setSelectedOptions] = useState([] as any);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
-
+  const [showBlurb, setShowBlurb] = useState(false);
   
   const handleAnswerOption = (answer: any) => {
     setSelectedOptions([
@@ -17,14 +17,14 @@ export default function Home() {
     setSelectedOptions([...selectedOptions]);
   };
 
-  const handlePrevious = () => {
-    const prevQues = currentQuestion - 1;
-    prevQues >= 0 && setCurrentQuestion(prevQues);
-  };
+  const handleCheck = () => {
+    setShowBlurb(!showBlurb);
+  }
 
   const handleNext = () => {
     const nextQues = currentQuestion + 1;
     nextQues < questions.length && setCurrentQuestion(nextQues);
+    setShowBlurb(!showBlurb);
   };
 
   const handleSubmitButton = () => {
@@ -58,63 +58,78 @@ export default function Home() {
             </div>
         </div>
         ) : (
-          <>
-          <div className="flex flex-col lg:flex-row w-screen">
-            <div className="w-screen lg:w-1/2 px-5 h-1/2 justify-center items-center">
-            <div className="flex flex-col items-start w-full">
-              <h4 className="mt-10 text-xl text-white/60">
-                Question {currentQuestion + 1} of {questions.length}
-              </h4>
-              <div className="mt-4 text-2xl text-white">
-                {questions[currentQuestion].question}
+          <>{ showBlurb ? (
+          <div className={(selectedOptions[currentQuestion].answerByUser === questions[currentQuestion].correctAnswer)
+            ? ("w-screen px-5 h-1/2 justify-center items-center bg-[#A9D49F]") :  
+            ("w-screen px-5 h-1/2 justify-center items-center bg-[#FFA6A6]")}>
+            <div className="flex flex-col w-screen h-screen justify-center items-center">
+              <div className="w-2/3">
+                <div className="text-xl text-white py-20">
+                  {questions[currentQuestion].question}
+                </div>
+                <h5 className="text-white py-20">
+                  {questions[currentQuestion].blurb}
+                </h5>
+                <button
+                  onClick={handleNext}
+                  className="w-[49%] py-3 bg-[#ffcf01] rounded-lg "
+                >
+                  Next
+                </button>
               </div>
             </div>
-            <div className="flex flex-col w-full">
-              {questions[currentQuestion].answerOptions.map((answer, index) => (
-                <div
-                  key={index}
-                  className="flex items-center w-full py-4 pl-5 m-2 ml-0 space-x-2 border-2 cursor-pointer border-black/10 rounded-xl bg-[#f3655a]"
-                  onClick={(e) => handleAnswerOption(answer.answer)}
-                >
-                  <input
-                    type="radio"
-                    name={answer.answer}
-                    value={answer.answer}
-                    checked={
-                      answer.answer ===
-                      selectedOptions[currentQuestion]?.answerByUser
-                    }
-                    onChange={(e) => handleAnswerOption(answer.answer)}
-                    className="w-6 h-6 bg-black"
-                  />
-                  <p className="ml-6 text-white">{answer.answer}</p>
+          </div>
+          ) : (
+          <div className="flex flex-col lg:flex-row w-screen">
+            <div className="w-screen lg:w-1/2 px-5 h-1/2 justify-center items-center">
+              <div className="flex flex-col items-start w-full">
+                <h4 className="mt-10 text-xl text-white/60">
+                  Question {currentQuestion + 1} of {questions.length}
+                </h4>
+                <div className="mt-4 text-2xl text-white">
+                  {questions[currentQuestion].question}
                 </div>
-              ))}
-            </div>
-            <div className="flex justify-between w-full mt-4 text-white">
-              <button
-                onClick={handlePrevious}
-                className="w-[49%] py-3 bg-[#ffcf01] rounded-lg"
-              >
-                Previous
-              </button>
-              <button
-                onClick={
-                  currentQuestion + 1 === questions.length
-                    ? handleSubmitButton
-                    : handleNext
-                }
-                className="w-[49%] py-3 bg-[#ffcf01] rounded-lg left"
-              >
-                {currentQuestion + 1 === questions.length ? "Submit" : "Next"}
-              </button>
-            </div>
+              </div>
+              <div className="flex flex-col w-full">
+                {questions[currentQuestion].answerOptions.map((answer, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center w-full py-4 pl-5 m-2 ml-0 space-x-2 border-2 cursor-pointer border-black/10 rounded-xl bg-[#f3655a]"
+                    onClick={(e) => handleAnswerOption(answer.answer)}
+                  >
+                    <input
+                      type="radio"
+                      name={answer.answer}
+                      value={answer.answer}
+                      checked={
+                        answer.answer ===
+                        selectedOptions[currentQuestion]?.answerByUser
+                      }
+                      onChange={(e) => handleAnswerOption(answer.answer)}
+                      className="w-6 h-6 bg-black"
+                    />
+                    <p className="ml-6 text-white">{answer.answer}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="flex justify-between w-full mt-4 text-white">
+                <button
+                  onClick={
+                    currentQuestion + 1 === questions.length
+                      ? handleSubmitButton
+                      : handleCheck
+                  }
+                  className="w-[49%] py-3 bg-[#ffcf01] rounded-lg left"
+                >
+                  {currentQuestion + 1 === questions.length ? "Submit" : "Check"}
+                </button>
+              </div>
             </div>
             <div className="flex flex-col w-screen lg:w-1/2 px-5 h-screen justify-start lg:justify-end items-center">
               <img src={questions[currentQuestion].image} className="h-1/2 lg:h-4/5"></img>
             </div>
           </div>
-          </>
+          )}</>
         )}
     </div>
   );
