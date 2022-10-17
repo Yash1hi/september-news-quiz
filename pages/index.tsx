@@ -47,14 +47,14 @@ export default function Home() {
         <title>El Estoque September News Quiz</title>
       </Head>
         {showScore ? (
-        <div className="flex flex-row w-screen px-5 h-screen justify-center items-center">
-          <div className="text-center">
-            <h1 className="text-3xl font-semibold text-white">
+        <div className="flex flex-row w-screen px-5 h-screen justify-center items-start bg-[url('../public/FinalBackground.png')]" >
+          <div className="text-center py-20">
+            <h1 className="text-3xl font-semibold text-white justify-start">
               You scored {score} out of {questions.length}
             </h1> 
-              <a className="text-2xl text-rain" href="https://elestoque.org/">
-                Back to El Estoque
-              </a>          
+              <button className="bg-yellow-500 hover:bg-yellow-700 text-white text-xl font-bold my-10 py-2 px-4 rounded w-1/2">
+                Return to El Estoque to read our other stories
+              </button>          
             </div>
         </div>
         ) : (
@@ -64,17 +64,30 @@ export default function Home() {
             ("w-screen px-5 h-1/2 justify-center items-center bg-[#FFA6A6]")}>
             <div className="flex flex-col w-screen h-screen justify-center items-center">
               <div className="w-2/3">
-                <div className="text-xl text-white py-20">
+                <p className="text-3xl text-white pt-20">
                   {questions[currentQuestion].question}
-                </div>
-                <h5 className="text-white py-20">
+                </p>
+                <p className="text-2xl text-white pt-5">
+                  Answer: {questions[currentQuestion].correctAnswer}
+                </p>
+                <p className="text-xl text-white py-10">
                   {questions[currentQuestion].blurb}
-                </h5>
+                </p>
                 <button
-                  onClick={handleNext}
-                  className="w-[49%] py-3 bg-[#ffcf01] rounded-lg "
-                >
-                  Next
+                  onClick={
+                    currentQuestion + 1 === questions.length
+                      ? handleSubmitButton
+                      : handleNext
+                  }
+                  className={(selectedOptions[currentQuestion].answerByUser === questions[currentQuestion].correctAnswer)
+                    ? ("w-[49%] py-3 bg-[#88d177] rounded-lg") :  
+                    ("w-[49%] py-3 bg-[#fa7373] rounded-lg")}
+                  >
+                  {
+                    currentQuestion + 1 === questions.length
+                      ? "Submit"
+                      : "Next"
+                  }
                 </button>
               </div>
             </div>
@@ -114,11 +127,7 @@ export default function Home() {
               </div>
               <div className="flex justify-between w-full mt-4 text-white">
                 <button
-                  onClick={
-                    currentQuestion + 1 === questions.length
-                      ? handleSubmitButton
-                      : handleCheck
-                  }
+                  onClick={handleCheck}
                   className="w-[49%] py-3 bg-[#ffcf01] rounded-lg left"
                 >
                   {currentQuestion + 1 === questions.length ? "Submit" : "Check"}

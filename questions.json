@@ -67,7 +67,7 @@
         { "answer": "Asteroid", "isCorrect": true },
         { "answer": "Meteor" }
       ],
-      "correctAnswer": "Asteroids",
+      "correctAnswer": "Asteroid",
       "image": "./Question6.png",
       "blurb": "On Sept. 26, NASA completed its Double Asteroid Redirection Test by crashing a probe into Dimorphos, a harmless asteroid with a diameter of about 530 feet. According to NASA Administrator Bill Nelson, the crash was an “unprecedented success for planetary defense” and is predicted to change the asteroid’s orbit by roughly 10 minutes. It was NASA’s first successful demonstration of kinetic impact technology, which involves transferring momentum from a spacecraft into a space object to deflect its trajectory."
     },
@@ -95,7 +95,8 @@
       "image": "./Question8.png",
       "blurb": "The Italian general election was held on Sept. 25. The right-wing Brothers of Italy party, led by Giorgia Meloni, won the most seats in Parliament with 26 percent of the vote, putting Meloni on track to become Italy’s next prime minister. The victory follows a string of far-right successes in Sweden, France and Spain, and marks the furthest right-wing Italy’s government has been since 1945."
     },
-    {
+    { 
+      
       "question": "What holiday did Spanish students celebrate on Sept. 19?",
       "answerOptions": [
         { "answer": "Cinco De Mayo" },
