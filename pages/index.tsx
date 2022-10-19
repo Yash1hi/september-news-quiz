@@ -57,16 +57,14 @@ export default function Home() {
         <title>El Estoque September News Quiz</title>
       </Head>
         {showScore ? (
-        <div className="flex flex-row w-screen px-5 h-screen justify-center items-start bg-[#e32b22]">
+        <div className="flex flex-row w-screen px-5 h-screen justify-center items-start [url('../public/FinalBackground.png')] bg-no-repeat bg-cover bg-center bg-fixed">
           <div className="text-center py-20">
-            <h1 className="text-3xl font-semibold text-white justify-start">
+            <p className="text-3xl font-semibold text-white justify-center">
+              Nice Work!
+            </p>
+            <h1 className="text-3xl font-semibold text-white justify-center">
               You scored {score} out of {questions.length}
-            </h1> 
-            <a href="https://elestoque.org/">
-              <button className="bg-yellow-500 hover:bg-yellow-700 text-white text-xl font-bold my-10 py-2 px-4 rounded w-1/2">
-                Return to El Estoque to read our other stories
-              </button>
-            </a>           
+            </h1>           
           </div>
         </div>
         ) : (
