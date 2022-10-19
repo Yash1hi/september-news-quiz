@@ -42,29 +42,38 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col w-screen bg-[#e32b22]">
+    <div className={showScore ? 
+      ("flex flex-col w-screen bg-[url('../public/FinalBackground.png')]") : 
+      ("flex flex-col w-screen bg-[#e32b22]")}>
       <Head>
         <title>El Estoque September News Quiz</title>
       </Head>
         {showScore ? (
-        <div className="flex flex-row w-screen px-5 h-screen justify-center items-start bg-[url('../public/FinalBackground.png')]" >
+        <div className="flex flex-row w-screen px-5 h-screen justify-center items-start">
           <div className="text-center py-20">
             <h1 className="text-3xl font-semibold text-white justify-start">
               You scored {score} out of {questions.length}
             </h1> 
+            <a href="https://elestoque.org/">
               <button className="bg-yellow-500 hover:bg-yellow-700 text-white text-xl font-bold my-10 py-2 px-4 rounded w-1/2">
                 Return to El Estoque to read our other stories
-              </button>          
-            </div>
+              </button>
+            </a>           
+          </div>
         </div>
         ) : (
           <>{ showBlurb ? (
           <div className={(selectedOptions[currentQuestion].answerByUser === questions[currentQuestion].correctAnswer)
-            ? ("w-screen px-5 h-1/2 justify-center items-center bg-[#A9D49F]") :  
-            ("w-screen px-5 h-1/2 justify-center items-center bg-[#FFA6A6]")}>
+            ? ("w-screen justify-center items-center bg-[#A9D49F]") :  
+            ("w-screen justify-center items-center bg-[#FFA6A6]")}>
             <div className="flex flex-col w-screen h-screen justify-center items-center">
               <div className="w-2/3">
-                <p className="text-3xl text-white pt-20">
+                <p className="text-xl text-white">
+                {(selectedOptions[currentQuestion].answerByUser === questions[currentQuestion].correctAnswer)
+                  ? ("Correct") :  
+                  ("Incorrect")}
+                </p>
+                <p className="text-3xl text-white pt-3">
                   {questions[currentQuestion].question}
                 </p>
                 <p className="text-2xl text-white pt-5">
