@@ -79,10 +79,10 @@ export default function Home() {
                   ? ("Correct") :  
                   ("Incorrect")}
                 </p>
-                <p className="text-3xl text-white pt-3">
+                <p className="text-2xl m:text-3xl text-white pt-3">
                   {questions[currentQuestion].question}
                 </p>
-                <p className="text-2xl text-white pt-5">
+                <p className="text-xl m:text-2xl text-white pt-5">
                   Answer: {questions[currentQuestion].correctAnswer}
                 </p>
                 <p className="text-m m:text-xl text-white py-10">
