@@ -85,7 +85,7 @@ export default function Home() {
                 <p className="text-2xl text-white pt-5">
                   Answer: {questions[currentQuestion].correctAnswer}
                 </p>
-                <p className="text-xl text-white py-10">
+                <p className="text-m m:text-xl text-white py-10">
                   {questions[currentQuestion].blurb}
                 </p>
                 <button
