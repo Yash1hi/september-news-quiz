@@ -72,7 +72,7 @@ export default function Home() {
           <div className={(selectedOptions[currentQuestion].answerByUser === questions[currentQuestion].correctAnswer)
             ? ("w-screen justify-center items-center bg-[#A9D49F]") :  
             ("w-screen justify-center items-center bg-[#FFA6A6]")}>
-            <div className="flex flex-col w-screen h-screen justify-center items-center">
+            <div className="flex flex-col w-screen justify-center items-center">
               <div className="w-2/3">
                 <p className="text-xl text-white">
                 {(selectedOptions[currentQuestion].answerByUser === questions[currentQuestion].correctAnswer)
@@ -95,8 +95,8 @@ export default function Home() {
                       : handleNext
                   }
                   className={(selectedOptions[currentQuestion].answerByUser === questions[currentQuestion].correctAnswer)
-                    ? ("w-[49%] py-3 bg-[#88d177] rounded-lg") :  
-                    ("w-[49%] py-3 bg-[#fa7373] rounded-lg")}
+                    ? ("w-[49%] py-3 my-10 bg-[#88d177] rounded-lg") :  
+                    ("w-[49%] py-3 my-10 bg-[#fa7373] rounded-lg")}
                   >
                   {
                     currentQuestion + 1 === questions.length
