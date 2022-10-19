@@ -43,7 +43,7 @@ export default function Home() {
 
   return (
     <div className={showScore ? 
-      ("flex flex-col w-screen bg-[url('../public/FinalBackground.png')]") : 
+      ("flex flex-col w-screen bg-[url('../public/FinalBackground.png')] bg-no-repeat bg-cover bg-center bg-fixed") : 
       ("flex flex-col w-screen bg-[#e32b22]")}>
       <Head>
         <title>El Estoque September News Quiz</title>
