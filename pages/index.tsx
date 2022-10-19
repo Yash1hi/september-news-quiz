@@ -17,6 +17,13 @@ export default function Home() {
     setSelectedOptions([...selectedOptions]);
   };
 
+  const loadPage = (answer: any) => {
+    setSelectedOptions([
+      (selectedOptions[currentQuestion+1] = { answerByUser: answer }),
+    ]);
+    setSelectedOptions([...selectedOptions]);
+  };
+
   const handleCheck = () => {
     setShowBlurb(!showBlurb);
   }
@@ -25,6 +32,7 @@ export default function Home() {
     const nextQues = currentQuestion + 1;
     nextQues < questions.length && setCurrentQuestion(nextQues);
     setShowBlurb(!showBlurb);
+    loadPage("none")
   };
 
   const handleSubmitButton = () => {
